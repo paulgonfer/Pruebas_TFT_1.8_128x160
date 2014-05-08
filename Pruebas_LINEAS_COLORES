@@ -1,0 +1,42 @@
+#include <UTFT.h>
+
+extern uint8_t SmallFont[];
+
+UTFT myGLCD(QD_TFT180C,11,10,9,12,8);
+
+void setup()
+{
+  myGLCD.InitLCD();
+  myGLCD.setFont(SmallFont);
+
+}
+
+void loop()
+{
+
+myGLCD.clrScr();
+
+myGLCD.setBackColor(0, 0, 0); // Color del fondo de las letras
+
+myGLCD.setColor(255, 255, 255); // Blanco
+myGLCD.print("Linea 1", LEFT, 0);
+
+myGLCD.print("Linea 1", LEFT, 10);
+myGLCD.print("Linea 2", LEFT, 20);
+myGLCD.print("Linea 3", LEFT, 30);
+myGLCD.setColor(0, 255, 0);
+myGLCD.print("1234567890123456789", LEFT, 40);
+myGLCD.setColor(255, 0, 0);
+myGLCD.print("19 columnas", CENTER, 50);
+myGLCD.setColor(0, 0, 255);
+myGLCD.print("Linea 6", LEFT, 60);
+myGLCD.print("Linea 7", LEFT, 70);
+myGLCD.print("Linea 8", LEFT, 80);
+myGLCD.print("Linea 9", LEFT, 90);
+myGLCD.print("Linea 10", LEFT, 100);
+myGLCD.print("Linea 11", LEFT, 110);
+//myGLCD.print("Linea 12", LEFT, 120);
+
+  delay(4000);
+}
+
