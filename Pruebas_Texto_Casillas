@@ -1,0 +1,51 @@
+#include <UTFT.h>
+extern uint8_t SmallFont[];// Declare which fonts we will be using
+UTFT myGLCD(QD_TFT180C,11,10,9,12,8);
+
+void setup()
+{
+myGLCD.InitLCD();// Setup the LCD
+myGLCD.setFont(SmallFont);
+myGLCD.clrScr();// Clear the screen and draw the frame
+}
+
+void loop()
+{
+ // myGLCD.clrScr();// Clear the screen and draw the frame
+
+myGLCD.setColor (255,255,255); 
+myGLCD.drawRect(102, 0, 158, 13);
+myGLCD.drawRect(102, 15, 158, 28);
+myGLCD.drawRect(102, 30, 158, 43);
+myGLCD.drawRect(102, 45, 158, 58);
+myGLCD.drawRect(102, 60, 158, 73);
+myGLCD.drawRect(102, 75, 158, 88);
+myGLCD.drawRect(102, 90, 158, 103);
+myGLCD.drawRect(102, 105, 158, 118);
+
+
+
+myGLCD.setColor(0, 255, 0); myGLCD.print("Linea 1", LEFT, 1);
+    myGLCD.setColor(255, 255, 0); myGLCD.print("123.45", 105, 1);    
+   
+myGLCD.setColor(0, 255, 0); myGLCD.print("Linea 2", LEFT, 16);
+    myGLCD.setColor(255, 255, 0); myGLCD.print("ABCDEF", 105, 16);
+   
+myGLCD.setColor(0, 255, 0); myGLCD.print("Linea 3", LEFT, 31);
+    myGLCD.setColor(255, 255, 0); myGLCD.print("On-Off", 105, 31);
+myGLCD.setColor(0, 255, 0); myGLCD.print("LINEA 4", LEFT, 46);   
+
+myGLCD.setColor(0, 255, 0); myGLCD.print("LINEA 5", LEFT, 61);
+
+myGLCD.setColor(0, 255, 0); myGLCD.print("TEMPERATURA", LEFT, 76);
+  myGLCD.setColor(255, 255, 0); myGLCD.print("-15.4", 105, 76);
+
+myGLCD.setColor(0, 255, 0); myGLCD.print("HUMEDAD", 40, 91);
+  myGLCD.setColor(255, 255, 0); myGLCD.print("65%", 105, 91);
+myGLCD.setColor(0, 255, 0); myGLCD.print("HORA", 68, 106);
+  myGLCD.setColor(255, 255, 0); myGLCD.print("23:58", 105, 106);
+
+
+
+
+}
